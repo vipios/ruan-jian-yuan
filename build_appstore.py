@@ -25,9 +25,6 @@ STATS = os.path.join(ROOT, 'stats.json')  # 每日统计基线（当天 0 点应
 SOURCES = [
     'https://ipa.hxys2.xyz/appstore',
     'https://app.dumpapps.com/appstore',
-    'https://ipa.312752.cn/appstore',
-    'https://qnq.nuosike.cn/appstore',
-    'https://yuan.iosyuan.cn/appstore',
     'https://l060122jun-dotcom.github.io/ipa-source/appstore.json',
 ]
 
