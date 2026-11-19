@@ -26,6 +26,8 @@ SOURCES = [
     'https://ipa.hxys2.xyz/appstore',
     'https://app.dumpapps.com/appstore',
     'https://l060122jun-dotcom.github.io/ipa-source/appstore.json',
+    'https://wk.wkios.cn/appstore',
+    'https://rjy.xiaiqiao.icu/appstore',
 ]
 
 UA = 'OmniSign/7.7'
