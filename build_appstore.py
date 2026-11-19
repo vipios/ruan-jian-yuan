@@ -36,7 +36,7 @@ UA = 'OmniSign/7.7'
 # 短格式：镜像站会把 github.com/<仓库>/raw/<分支>/ 自动补全为 GitHub 直链，
 # 因此地址里不含 raw.githubusercontent.com，更短
 MIRROR = 'https://gh-proxy.com/'
-REPO_PATH = 'github.com/vipios/vipios.github.io/raw/main/'
+REPO_PATH = 'github.com/vipios/ruan-jian-yuan/raw/main/'
 SOURCE_URL = MIRROR + REPO_PATH + 'appstore'
 SOURCE_NAME = '不知道起什么名'
 SOURCE_ICON = MIRROR + REPO_PATH + 'flag2.png'

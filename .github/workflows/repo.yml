@@ -1,0 +1,44 @@
+name: Update Appstore Source
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'build_appstore.py'
+      - 'sources.json'
+      - '.github/workflows/repo.yml'
+  workflow_dispatch:
+  schedule:
+    - cron: '*/30 * * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ruan-jian-yuan
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Aggregate appstore sources
+        run: python3 build_appstore.py
+
+      - name: Commit updated appstore
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add appstore stats.json source_cache.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Update appstore index"
+            git pull --rebase --autostash origin main
+            git push origin HEAD:main
+          fi
